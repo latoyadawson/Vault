@@ -16,6 +16,14 @@ BudgetItems.init(
             type: DataTypes.STRING,
             allowNull: false
         },
+        budget_amount: {
+            type: DataTypes.DECIMAL,
+            allowNull: true,
+        },
+        date: {
+            type: DataTypes.DATE,
+            allowNull: false,
+        },
         category_id: {
             type: DataTypes.INTEGER,
             allowNull: false,

@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 
 class Category extends Model {}
 
-//saving, home, Transportation, lifestyle, debt
+//saving, home, Transportation, lifestyle, etc
 Category.init(
     {
         id: {
