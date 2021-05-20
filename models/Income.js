@@ -34,7 +34,7 @@ Income.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'category'
+        modelName: 'income'
     }
 )
-module.exports = Category;
+module.exports = Income;
