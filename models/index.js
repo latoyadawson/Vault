@@ -15,24 +15,20 @@ User.hasMany(BudgetItem, {
   foreignKey: 'user_id'
 });
 
-Category.belongsTo(, {
-    foreignKey: 'category_id'
-});
-
 Category.belongsToMany(BudgetItem, {
-
+  foreignKey: 'category_id'
 });
 
 BudgetItem.hasOne(Category, {
-
+  foreignKey: 'category_id'
 });
 
 Income.belongsTo(User, {
-
+  foreignKey: 'user_id'
 });
 
-Income.hasMany(User, {
-
+Income.hasOne(User, {
+  foreignKey: 'user_id'
 });
 
 module.exports = { User, Category, BudgetItem, Income };
