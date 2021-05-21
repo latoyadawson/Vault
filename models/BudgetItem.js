@@ -18,7 +18,7 @@ BudgetItems.init(
         },
         budget_amount: {
             type: DataTypes.DECIMAL,
-            allowNull: true,
+            defaultValue: 0
         },
         date: {
             type: DataTypes.DATE,
