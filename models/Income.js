@@ -12,7 +12,7 @@ Income.init(
             primaryKey: true,
             autoIncrement: true
         },
-        budget_amount: {
+        income_amount: {
             type: DataTypes.DECIMAL,
             allowNull: false,
         },

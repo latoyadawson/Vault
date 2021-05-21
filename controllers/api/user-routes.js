@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { BudgetItem, Category, Income } = require('../../models');
+const { User, BudgetItems, Category, Income } = require('../../models');
 
 
 router.get('/', (req, res) => {
@@ -20,26 +20,19 @@ router.get('/:id', (req, res) => {
                 id: req.params.id
                 
             },
-            include: [
-            //budgets and categorys/income
-
-            {
+            include: [ //budgets and categorys/income
+                {
                     model: Category,
-                    attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-                    include: {
-                        model: User,
-                        attributes: ['username']
-                    }
+                    attributes: ['name']
                 },
                 {
-                    model: BudgetItem,
-                    attributes: ['username']
+                    model: BudgetItems,
+                    attributes: ['name', 'budget_amount', 'date']
                 },
                 {
                     model: Income,
-                    attributes: ['username']
+                    attributes: ['income_amount' , 'date']
                 }
-
 
             ]
         })
@@ -54,18 +47,16 @@ router.get('/:id', (req, res) => {
             console.log(err);
             res.status(500).json(err);
         });
+    
 });
 
-
 router.post('/', (req, res) => {
-
     User.create({
         first_name: req.body.first_name,
         last_name: req.body.last_name,
         email: req.body.email,
         password: req.body.password
     })
-
     .then(dbUserData => {
             req.session.save(() => {
                 req.session.user_id = dbUserData.id;
@@ -102,8 +93,9 @@ router.post('/login', (req, res) => {
             req.session.save(() => {
 
                 req.session.user_id = dbUserData.id;
-                req.session.first_name = dbUserData.first_name;
-                req.session.last_name = dbUserData.last_name;
+                req.session.email = dbUserData.email;
+                // req.session.first_name = dbUserData.first_name;
+                // req.session.last_name = dbUserData.last_name;
                 req.session.loggedIn = true;
 
                 res.json({ user: dbUserData, message: 'You are now logged in!' });
