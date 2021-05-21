@@ -1,4 +1,5 @@
 DROP DATABASE IF EXISTS vault;
 
 CREATE DATABASE vault;
-USE vault;
+USE vault;  
+
