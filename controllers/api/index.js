@@ -5,5 +5,6 @@ const budgetRoutes = require('./budget-routes');
 
 
 router.use('/users', userRoutes);
+router.use('/budgets', budgetRoutes);
 
 module.exports = router;
