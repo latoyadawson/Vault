@@ -1,0 +1,12 @@
+DROP TABLE IF EXISTS user;
+DROP TABLE IF EXISTS category;
+DROP TABLE IF EXISTS budget_item;
+DROP TABLE IF EXISTS expense;
+
+CREATE TABLE user (
+  user_id INTEGER AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(50) NOT NULL,
+  email VARCHAR(250),
+  password CHAR(60)
+);
+
