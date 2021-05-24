@@ -15,6 +15,7 @@ Category.init(
         name: {
             type: DataTypes.STRING,
             allowNull: false
+<<<<<<< HEAD
         },
         total: {
             type: DataTypes.INTEGER,
@@ -24,6 +25,9 @@ Category.init(
             }
         }
 
+=======
+        }
+>>>>>>> 1a5cffd60c5545f69c369c4badbd966925953d04
     },
     {
         sequelize,

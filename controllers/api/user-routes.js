@@ -1,5 +1,6 @@
 const router = require('express').Router();
-const { BudgetItem, Category, Income } = require('../../models');
+const { User, BudgetItems, Category, Income } = require('../../models');
+
 
 router.get('/', (req, res) => {
     User.findAll({
@@ -19,14 +20,18 @@ router.get('/:id', (req, res) => {
                 id: req.params.id
                 
             },
-            include: [
+            include: [ //budgets and categorys/income
                 {
-                    model: BudgetItem,
-                    attributes: ['id', 'title', 'budget_amount', 'date', 'category_id']
+                    model: Category,
+                    attributes: ['name']
+                },
+                {
+                    model: BudgetItems,
+                    attributes: ['name', 'budget_amount', 'date']
                 },
                 {
                     model: Income,
-                    attributes: ['id', 'income_amount', 'date']
+                    attributes: ['income_amount' , 'date']
                 }
 
             ]
@@ -42,20 +47,21 @@ router.get('/:id', (req, res) => {
             console.log(err);
             res.status(500).json(err);
         });
+    
 });
 
-
 router.post('/', (req, res) => {
-
     User.create({
-        username: req.body.username,
+        first_name: req.body.first_name,
+        last_name: req.body.last_name,
+        email: req.body.email,
         password: req.body.password
     })
-
     .then(dbUserData => {
             req.session.save(() => {
                 req.session.user_id = dbUserData.id;
-                req.session.username = dbUserData.username;
+                req.session.first_name = dbUserData.first_name;
+                req.session.last_name = dbUserData.last_name;
                 req.session.loggedIn = true;
 
                 res.json(dbUserData);
@@ -70,7 +76,8 @@ router.post('/', (req, res) => {
 router.post('/login', (req, res) => {
     User.findOne({
             where: {
-                username: req.body.username
+
+                email: req.body.email
             }
         }).then(dbUserData => {
             if (!dbUserData) {
@@ -86,7 +93,9 @@ router.post('/login', (req, res) => {
             req.session.save(() => {
 
                 req.session.user_id = dbUserData.id;
-                req.session.username = dbUserData.username;
+                req.session.email = dbUserData.email;
+                // req.session.first_name = dbUserData.first_name;
+                // req.session.last_name = dbUserData.last_name;
                 req.session.loggedIn = true;
 
                 res.json({ user: dbUserData, message: 'You are now logged in!' });
