@@ -8,7 +8,7 @@ async function deleteBudgetAmountHandler(event) {
     const response = await fetch(`/api/budgets/${id}`, {
       method: 'DELETE',
       body: JSON.stringify({
-          //grab the
+          //grab the id of the budget items
          BudgetItems_id: id
       }),
       headers: {

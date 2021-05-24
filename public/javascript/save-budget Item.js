@@ -1,14 +1,13 @@
-async function addBudgetFormHandler(event) {
+async function saveBudgetFormHandler(event) {
     event.preventDefault();
   
-    const title = document.querySelector('input[name="post-title"]').value;
-    const content = document.querySelector('textarea[name="content"]').value;
+    const budget_amount = document.querySelector('input[name="post-title"]').value;
   
     const response = await fetch(`/api/budgets`, {
       method: 'POST',
       body: JSON.stringify({
-        title,
-        content
+        budget_amount,
+        date
       }),
       headers: {
         'Content-Type': 'application/json'
@@ -23,5 +22,5 @@ async function addBudgetFormHandler(event) {
 };
 
 //replace tbd with class or id 
-document.querySelector('.TBD').addEventListener('submit', addBudgetFormHandler);
+document.querySelector('.TBD').addEventListener('submit', saveBudgetFormHandler);
   
