@@ -16,6 +16,13 @@ Category.init(
             type: DataTypes.STRING,
             allowNull: false
         },
+        total: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'budgetItem',
+                key: 'budget_amount'
+            }
+        }
 
     },
     {
