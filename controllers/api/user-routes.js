@@ -1,5 +1,5 @@
 const router = require('express').Router();
-//const { User, Post, Comment } = require('../../models');
+const { BudgetItem, Category, Income } = require('../../models');
 
 router.get('/', (req, res) => {
     User.findAll({
@@ -20,7 +20,14 @@ router.get('/:id', (req, res) => {
                 
             },
             include: [
-            //budgets and categorys/income
+                {
+                    model: BudgetItem,
+                    attributes: ['id', 'title', 'budget_amount', 'date', 'category_id']
+                },
+                {
+                    model: Income,
+                    attributes: ['id', 'income_amount', 'date']
+                }
 
             ]
         })
