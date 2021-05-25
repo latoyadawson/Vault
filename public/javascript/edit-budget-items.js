@@ -1,4 +1,4 @@
-async function addBudgetFormHandler(event) {
+async function editBudgetFormHandler(event) {
     event.preventDefault();
   
     //const title = document.querySelector('input[name="post-title"]').value;
@@ -23,5 +23,5 @@ async function addBudgetFormHandler(event) {
 };
 
 //replace tbd with class or id 
-document.querySelector('.TBD').addEventListener('submit', addBudgetFormHandler);
+document.querySelector('.#edit-budget-btn').addEventListener('submit', editBudgetFormHandler);
   

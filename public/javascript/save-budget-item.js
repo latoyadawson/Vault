@@ -1,7 +1,7 @@
 async function saveBudgetFormHandler(event) {
     event.preventDefault();
   
-    const budget_amount = document.querySelector('input[name="post-title"]').value;
+    const budget_amount = document.querySelector('input[name="budget-amount"]').value;
   
     const response = await fetch(`/api/budgets`, {
       method: 'POST',
@@ -15,12 +15,12 @@ async function saveBudgetFormHandler(event) {
     });
   
     if (response.ok) {
-      document.location.replace('/');
+      document.location.replace('/dashboard');
     } else {
       alert(response.statusText);
     }
 };
 
 //replace tbd with class or id 
-document.querySelector('.TBD').addEventListener('submit', saveBudgetFormHandler);
+document.querySelector('#save-budget-btn').addEventListener('submit', saveBudgetFormHandler);
   

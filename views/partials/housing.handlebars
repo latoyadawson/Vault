@@ -1,0 +1,53 @@
+<!-- Modal for Housing budget-->
+<div id="housing" class="modal fade" tabindex="-1"  aria-labelledby="housingLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="housingLabel">Housing Budget</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"  aria-label="Close"></button>
+            </div>
+            <div class="modal-body expense-form " id="expense-form">
+                <form action="" id="expForm">
+                    <h4>Mortgage/rent</h4>
+                    <!-- Mortgage/rent $ amount input -->
+                    <div class="">
+                        <label for="mortgage-rent-budget">please enter budget amount</label> <br />
+                        <input type="number" id="mortgage-rent-budget" />
+                    </div>
+                    <h4>Utilities</h4>
+                    <!-- utilities $ input-->
+                    <div class="">
+                        <label for="utilities-budget">please enter budget amount</label> <br />
+                        <input type="number" id="utilities-budget" />
+                    </div>
+                    <h4>Repairs</h4>
+                    <!-- repairs $ input-->
+                    <div class="">
+                        <label for="repairs-budget">please enter budget amount</label> <br />
+                        <input type="number" id="repairs-budget" />
+                    </div>
+                    <h4>Remodeling</h4>
+                    <!-- remodeling $ input-->
+                    <div class="">
+                        <label for="remodeling-budget">please enter budget amount</label> <br />
+                        <input type="number" id="remodeling-budget" />
+                    </div>
+                    <h4>Property Taxes</h4>
+                    <!-- property taxes $ input-->
+                    <div class="">
+                        <label for="property-taxes-budget">please enter budget amount</label> <br />
+                        <input type="number" id="property-taxes-budget" />
+                    </div>
+                    <!-- buttons-->
+                    {{!-- <button type="submit" id="add-housing-budget-btn">Add Budget Item</button>
+                    <button type="submit" id="save-housing-budget-btn">Save changes</button>
+                    <button type="submit" id="delete-housing-budget-btn">Delete Budget Item</button> --}}
+                </form>
+                {{> modal}}
+            </div>
+        </div>
+    </div>  
+</div>
+{{!-- <script src="/javascript/save-budget-item.js"></script> --}}
+{{!-- <script src="/javascript/edit-budget-items.js"></script> --}}
+{{!-- <script src="/javascript/delete-budget-item.js"></script> --}}

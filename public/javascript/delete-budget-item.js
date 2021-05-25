@@ -24,4 +24,4 @@ async function deleteBudgetAmountHandler(event) {
   
 }
   
-document.querySelector('.delete-budget-amount').addEventListener('click', deleteBudgetAmountHandler);
+document.querySelector('#delete-budget-amount').addEventListener('click', deleteBudgetAmountHandler);
