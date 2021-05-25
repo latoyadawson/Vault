@@ -6,7 +6,7 @@ const withAuth = require('../../utils/auth');
 
 // Get total of all expenses from a category
 router.get('/', (req, res) => {
-    BudgetItems.findOne({
+    BudgetItems.findAll({
         attributes: [
             'id',
             'name',
@@ -14,27 +14,22 @@ router.get('/', (req, res) => {
             'category_id',
             'date',
             // [sequelize.literal('(SELECT COUNT(*) FROM budgetItem WHERE budgetitem.id = user.id)'), 'user_budget']
-            [sequelize.literal('(SELECT COUNT(*) FROM BudgetItem)'), 'all_budget']
+            [sequelize.literal('(SELECT COUNT(*) FROM budgetItems)'), 'all_budget']
         ],
         include: [
             {
                 model: Category,
                 attributes: ['category_name', 'category_id'],
-                include: {
-                    model: User,
-                    attributes: ['first_name']
-                }
+                // include: {
+                //     model: User,
+                //     attributes: ['first_name']
+                // }
             },
             {
                 model: User,
                 attributes: ['first_name']
             }
         ]
-    },
-    {
-        where: {
-            id: req.params.id
-        }
     })
         .then(dbBudgetData => res.json(dbBudgetData))
         .catch(err => {
