@@ -38,7 +38,7 @@ BudgetItems.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'budgetItem'
+        modelName: 'budgetItems'
     }
 )
 
