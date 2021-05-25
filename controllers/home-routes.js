@@ -1,12 +1,17 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Budget, User } = require('../models')
+const { Budget, User } = require('../models');
+const withAuth = require('../utils/auth');
 
 router.get('/', (req, res) => {
     res.render('landing');
 });
 
 router.get('/login', (req, res) => {
+    if(req.session.loggedIn) {
+        res.redirect('/dashboard');
+        return;
+    }
     res.render('login');
 });
 
@@ -14,8 +19,8 @@ router.get('/signup', (req, res) => {
     res.render('signup');
 });
 
-router.get('/dashboard', (req, res) => {
-    res.render('dashboard', {
+router.get('/dashboard',(req, res) => {
+    res.render('dashboard'); 
         // ToDo 
         // GET routes retreiving objects from our model structure 
         // that we want available in the Handlebars
@@ -33,9 +38,9 @@ router.get('/dashboard', (req, res) => {
         //  loop through the array and {{/each}} where to end.
         //  
         //  
-        //   .then(dbPostData => {
-        //     const posts = dbPostData.map(post => post.get({ plain: true}));
-        //     res.render('homepage', { posts });
+        // }) .then(dbPostData => {
+        //     dbPostData.get({ plain: true});
+        //     res.render('dashboard');
         // })
         // .catch(err => {
         //     console.log(err);
@@ -44,9 +49,8 @@ router.get('/dashboard', (req, res) => {
 
 
 
-
-    });
 });
+
 
 
 module.exports = router;

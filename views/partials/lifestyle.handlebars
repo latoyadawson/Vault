@@ -1,0 +1,45 @@
+<!-- Modal for Lifestyle budget-->
+<div id="lifestyle" class="modal fade" tabindex="-1"  aria-labelledby="lifestyleLabel" aria-hidden="true">
+     <div class="modal-dialog">      
+        <div class="modal-content"> 
+            <div class="modal-header">
+                <h3 id="lifestyleLabel">Lifestyle Budget</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
+            </div>
+            <div class="expense-form modal-body" id="expense-form">
+                <form action="" id="expForm">
+                    <h4>Entertainment</h4>
+                    <!-- entertainment $ amount input -->
+                    <div class="">
+                        <label for="entertainment-budget">please enter budget amount</label> <br />
+                        <input type="number" id="entertainment-budget" />
+                    </div>
+                    <h4>Clothing</h4>
+                    <!-- clothing $ input-->
+                    <div class="">
+                        <label for="clothing-budget">please enter budget amount</label> <br />
+                        <input type="number" id="clothing-budget" />
+                    </div>
+                    <h4>Travel</h4>
+                    <!-- travel $ input-->
+                    <div class="">
+                        <label for="travel-budget">please enter budget amount</label> <br />
+                        <input type="number" id="travel-budget" />
+                    </div>
+                    <h4>Dining</h4>
+                    <!-- dining $ input-->
+                    <div class="">
+                        <label for="dining-budget">please enter budget amount</label> <br />
+                        <input type="number" id="dining-budget" />
+                    </div>
+                    <!-- buttons-->
+            
+                </form>
+                {{> modal}}
+            </div>
+        </div>
+    </div>
+</div>
+{{!-- <script src="/javascript/save-budget-item.js"></script> --}}
+{{!-- <script src="/javascript/edit-budget-items.js"></script> --}}
+{{!-- <script src="/javascript/delete-budget-item.js"></script> --}}
