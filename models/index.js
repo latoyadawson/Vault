@@ -8,10 +8,6 @@ const Income = require('./Income');
 // HasMany: One To Many
 // HasOne: One To One, The FKs will be defined in Target Model
 
-//create associations
-User.hasMany(Category, {
-  foreignKey: 'user_id'
-});
 
 User.hasMany(Income, {
   foreignKey: 'user_id'

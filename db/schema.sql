@@ -1,0 +1,7 @@
+DROP TABLE IF EXISTS user;
+DROP TABLE IF EXISTS category;
+DROP TABLE IF EXISTS budget_item;
+DROP TABLE IF EXISTS expense;
+
+
+

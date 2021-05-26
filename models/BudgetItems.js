@@ -1,4 +1,4 @@
-const { Model, DataTypes } = require('sequelize');
+const { Model, DataTypes, Sequelize } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class BudgetItems extends Model {}
@@ -14,18 +14,19 @@ BudgetItems.init(
         },
         name: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
         budget_amount: {
             type: DataTypes.DECIMAL,
             defaultValue: 0
         },
         date: {
-            type: DataTypes.DATE,
-            allowNull: false,
+            type: DataTypes.DATEONLY(3),
+            defaultValue: Sequelize.NOW
+            
         },
         category_id: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.INTEGER, 
             allowNull: false,
             references: {
                 model: 'category',
@@ -43,3 +44,4 @@ BudgetItems.init(
 )
 
 module.exports = BudgetItems;
+
