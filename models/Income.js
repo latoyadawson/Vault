@@ -16,10 +16,6 @@ Income.init(
             type: DataTypes.DECIMAL,
             allowNull: false,
         },
-        date: {
-            type: DataTypes.DATE,
-            allowNull: false,
-        },
         user_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
