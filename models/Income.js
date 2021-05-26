@@ -13,7 +13,7 @@ Income.init(
             autoIncrement: true
         },
         income_amount: {
-            type: DataTypes.DECIMAL,
+            type: DataTypes.INTEGER,
             allowNull: false,
         },
         user_id: {
