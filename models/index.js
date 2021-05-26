@@ -12,7 +12,7 @@ const Income = require('./Income');
 // });
 
 User.hasMany(BudgetItems, {
-  foreignKey: 'user_id'
+foreignKey: 'user_id'
 });
 
 BudgetItems.belongsTo(User, {
