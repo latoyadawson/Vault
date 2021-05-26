@@ -1,4 +1,4 @@
-const { Model, DataTypes } = require('sequelize');
+const { Model, DataTypes, Sequelize } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class BudgetItems extends Model {}
@@ -14,7 +14,7 @@ BudgetItems.init(
         },
         name: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
         budget_amount: {
             type: DataTypes.INTEGER,
@@ -41,8 +41,13 @@ BudgetItems.init(
         sequelize,
         freezeTableName: true,
         underscored: true,
-        modelName: 'budgetItem'
+        timestamps: false,
+        modelName: 'budgetItems'
     }
+    
 )
 
+
+
 module.exports = BudgetItems;
+
