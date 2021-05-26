@@ -16,12 +16,13 @@ User.hasMany(BudgetItems, {
 });
 
 BudgetItems.belongsTo(User, {
-  // foreignKey: 'user_id'
+  // foreignKey: 'id'
 });
 
 
 Category.hasMany(BudgetItems, {
-  // foreignKey: 'category_id'
+  foreignKey: 'category_id'
+
 });
 
 BudgetItems.belongsTo(Category, {
@@ -34,5 +35,10 @@ BudgetItems.belongsTo(Category, {
 
 module.exports = { User, Category, BudgetItems, Income };
 
-
-
+  // user.associate = models => {
+  //   user.hasMany(models.roles, {
+  //     foreignKey: 'Id',
+  //     sourceKey: 'RoleId',
+  //     onDelete: 'cascade',
+  //   });
+  // };

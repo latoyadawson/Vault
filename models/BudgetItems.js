@@ -17,7 +17,7 @@ BudgetItems.init(
             allowNull: false
         },
         budget_amount: {
-            type: DataTypes.DECIMAL,
+            type: DataTypes.INTEGER,
             defaultValue: 0
         },
         category_id: {
@@ -30,7 +30,7 @@ BudgetItems.init(
         },
         user_id:{
             type: DataTypes.INTEGER, 
-            allowNull: false,
+            allowNull: true,
             references: {
                 model: 'user',
                 key: 'id'

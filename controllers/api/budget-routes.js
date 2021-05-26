@@ -10,7 +10,6 @@ router.get('/', (req, res) => {
             "id",
             "name", 
             "budget_amount",  
-
         ],
         include: {
             model: Category,
@@ -59,7 +58,7 @@ router.post('/', (req, res) => {
     BudgetItems.create({
         name: req.body.name,
         budget_amount: req.body.budget_amount,
-        user_id: 1,
+        user_id: req.session.user_id,
         category_id: req.body.category_id
 
     })
