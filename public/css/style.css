@@ -1,0 +1,105 @@
+::placeholder {
+    color: #0d6efd;
+}
+
+input[type=text] {
+    outline: ;
+}
+
+input[type=text]:focus {
+    background-color: white
+    
+}
+
+
+
+input[type=email] {
+    width: ;
+}
+
+input[type=password] {
+    width: ;
+}
+
+#landing-form {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#signup-form {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#signup-user-input-div {
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+    border: 1px solid #0d6efd;
+    padding: 6vh;
+    border-radius: 20px;
+}
+
+#login-form {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+#login-user-input-div {
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+    border: 1px solid #0d6efd;
+    padding: 6vh;
+    border-radius: 20px;
+}
+
+#firstname-signup {
+    outline: none;
+    
+}
+
+#lastname-signup {
+    outline: none;
+}
+
+#email-signup {
+    outline: none;
+}
+
+#password-signup {
+    outline: none;
+}
+
+.btn-xl {
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 20px;
+}
+
+/* factor of 4 larger than bootstrap btn-lg class */
+.btn-xxl {
+    padding: 40px 80px;
+    font-size: 80px;
+    border-radius: 40px;
+}
+
+.btn-xxl-login {
+    padding: 4vh 9vh;
+    font-size: 7vh;
+    border-radius: 4.5vh;
+}
+
+
