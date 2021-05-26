@@ -7,7 +7,7 @@ const seedAll = async() => {
     console.log('\n----- DATABASE SYNCED -----\n');
 
     await seedCategory();
-    console.log('\n----- USERS SEEDED -----\n');
+    console.log('\n----- CATEGORY SEEDED -----\n');
 
     process.exit(0);
 };

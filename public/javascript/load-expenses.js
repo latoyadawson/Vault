@@ -1,7 +1,7 @@
 async function loadBudgetFormHandler(event) {
   event.preventDefault();
 
-  const budget_amount = document.querySelector('input[name="post-title"]').value;
+  // const budget_amount = document.querySelector('input[name="post-title"]').value;
 
   const response = await fetch(`/api/budgets/`, {
     method: 'GET',

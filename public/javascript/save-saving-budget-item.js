@@ -8,10 +8,10 @@ async function saveSavingFormHandler(event) {
   const investment_amount = document.querySelector('input[id="investment-budget"]').value;
   const retirement_amount = document.querySelector('input[id="retirement-budget"]').value;
 
-  await saveBudgetForm("Savings Account", saving_amount, 1);
-  await saveBudgetForm("Checking Account", checking_amount,1);
-  await saveBudgetForm("Investment Account", investment_amount, 1);
-  await saveBudgetForm("Retirement Account", retirement_amount, 1);
+  saveBudgetForm("Savings Account", saving_amount, 1);
+  saveBudgetForm("Checking Account", checking_amount,1);
+  saveBudgetForm("Investment Account", investment_amount, 1);
+  saveBudgetForm("Retirement Account", retirement_amount, 1);
  
 }
 

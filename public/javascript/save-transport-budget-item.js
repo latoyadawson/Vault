@@ -8,11 +8,11 @@ async function saveTransportationFormHandler(event) {
   const publicTransportation_amount = document.querySelector('input[id="public-transportation-budget"]').value;
   const carInsurance_amount = document.querySelector('input[id="insurance-budget"]').value;
 
-  await saveBudgetForm("Vehicle Payment",vehicle_amount , 3);
-  await saveBudgetForm("Gas", gas_amount,3);
-  await saveBudgetForm("Public Transportation", publicTransportation_amount , 3);
-  await saveBudgetForm("Car Insurance", carInsurance_amount , 3);
- 
+  saveBudgetForm("Vehicle Payment",vehicle_amount , 3);
+  saveBudgetForm("Gas", gas_amount,3);
+  saveBudgetForm("Public Transportation", publicTransportation_amount , 3);
+  saveBudgetForm("Car Insurance", carInsurance_amount , 3);
+
 }
 
 async function saveBudgetForm(budget_name, amount, category) {

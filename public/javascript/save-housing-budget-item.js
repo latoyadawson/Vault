@@ -9,11 +9,11 @@ async function saveHousingFormHandler(event) {
   const remodeling_amount = document.querySelector('input[id="remodeling-budget"]').value;
   const propertyTax_amount = document.querySelector('input[id="property-taxes-budget"]').value;
 
-  await saveBudgetForm("Mortgage | Rent",mortgage_amount , 2);
-  await saveBudgetForm("Utilities", utilities_amount,2);
-  await saveBudgetForm("Repairs",repairs_amount , 2);
-  await saveBudgetForm("Remodeling", remodeling_amount, 2);
-  await saveBudgetForm("Property Taxes", propertyTax_amount , 2);
+  saveBudgetForm("Mortgage | Rent",mortgage_amount , 2);
+  saveBudgetForm("Utilities", utilities_amount,2);
+  saveBudgetForm("Repairs",repairs_amount , 2);
+  saveBudgetForm("Remodeling", remodeling_amount, 2);
+  saveBudgetForm("Property Taxes", propertyTax_amount , 2);
 
     
 }

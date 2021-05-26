@@ -15,6 +15,6 @@ const categoryData = [
     }
 ];
 
-const seedCategory = () => Post.bulkCreate(categoryData);
+const seedCategory = () => Category.bulkCreate(categoryData);
 
 module.exports = seedCategory;
