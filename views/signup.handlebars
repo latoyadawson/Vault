@@ -1,21 +1,19 @@
-<form class="signup-form">
-    <div>
-        <label for="firstname-signup">First Name</label>
-        <input type="text" id="firstname-signup" />
-        <label for="lastname-signup">Last Name</label>
-        <input type="text" id="lastname-signup" />
+<form id="signup-form">
+    <div id="signup-user-input-div">
+        <!--<label for="firstname-signup">First Name</label>-->
+        <input type="text" id="firstname-signup" class="btn-outline-primary btn-xl" placeholder="Enter first name" />
+        <!--<label for="lastname-signup">Last Name</label>-->
+        <input type="text" id="lastname-signup" class="btn-xl btn-outline-primary" placeholder="Enter last name" />
+        <!--<label for="email-signup">Email</label>-->
+        <input type="email" id="email-signup" class="btn-xl btn-outline-primary" placeholder="Enter email" />
+        <!--<label for="password-signup">Password</label>-->
+        <input type="password" id="password-signup" class="btn-xl btn-outline-primary" placeholder="Enter password" />
     </div>
     <div>
-        <label for="email-signup">Email</label>
-        <input type="email" id="email-signup" />
+        <button type="submit" class="btn btn-outline-primary btn-xxl">signup</button>
     </div>
-    <div>
-        <label for="password-signup">Password</label>
-        <input type="password" id="password-signup" />
-    </div>
-    <div>
-        <button type="submit">signup</button>
-    </div>
+
+
 </form>
 
 <script src="/javascript/signup.js"></script>
