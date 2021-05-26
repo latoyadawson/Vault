@@ -8,36 +8,48 @@
             </div>
             <div class="modal-body expense-form " id="expense-form">
                 <form action="" id="expForm">
-                    <h4>Vehicle payment</h4>
+
                     <!-- vehicle payment $ amount input -->
-                    <div class="">
-                        <label for="vehicle-budget">please enter budget amount</label> <br />
-                        <input type="number" id="vehicle-budget" />
+                    <div class="row mb-3">
+                        <label for="vehicle-budget" class="col-sm-6 col-form-label">Vehicle payment</label> <br />
+                        <div class="input-group col-form-label col-sm-6">
+                            <span class="input-group-text">$</span>
+                            <input type="number" id="vehicle-budget" class="form-control" placeholder="please enter amount" value="0"/>
+                        </div>
                     </div>
-                    <h4>Gas</h4>
-                    <!-- utilities $ input-->
-                    <div class="">
-                        <label for="gas-budget">please enter budget amount</label> <br />
-                        <input type="number" id="gas-budget" />
+                 
+                    <!-- gas $ input-->
+                    <div class="row mb-3">
+                        <label for="gas-budget" class="col-sm-6 col-form-label">Gas</label> <br />
+                        <div class="input-group col-form-label col-sm-6">
+                            <span class="input-group-text">$</span>
+                            <input type="number" id="gas-budget" class="form-control" placeholder="please enter amount" />
+                        </div>
                     </div>
-                    <h4>Subway/bus</h4>
+
                     <!-- subway/bus $ input-->
-                    <div class="">
-                        <label for="subway-bus-budget">please enter budget amount</label> <br />
-                        <input type="number" id="subway-bus-budget" />
+                    <div class="row mb-3">
+                        <label for="public-transporation-budget" class="col-sm-6 col-form-label">Public Transportation</label> <br />
+                        <div class="input-group col-form-label col-sm-6">
+                            <span class="input-group-text">$</span>
+                            <input type="number" id="public-transportation-budget" class="form-control" placeholder="please enter amount" value="0" />
+                        </div>
                     </div>
-                    <h4>Repairs</h4>
+              
                     <!-- repairs $ input-->
-                    <div class="">
-                        <label for="vehicle-repairs-budget">please enter budget amount</label> <br />
-                        <input type="number" id="vehicle-repairs-budget" />
+                    <div class="row mb-3">
+                        <label for="insurance-budget" class="col-sm-6 col-form-label">Car Insurance</label> <br />
+                        <div class="input-group col-form-label col-sm-6">
+                            <span class="input-group-text">$</span>
+                            <input type="number" id="insurance-budget" class="form-control" placeholder="please enter amount" value="0" />
+                        </div>
                     </div>
                 </form>
-                 {{> modal}}
+                 <button type="submit" id="save-transportation-btn">Save Budget</button>
             </div>
         </div>
     </div>        
 </div>
-{{!-- <script src="/javascript/save-budget-item.js"></script> --}}
+<script src="/javascript/save-transport-budget-item.js"></script>
 {{!-- <script src="/javascript/edit-budget-items.js"></script> --}}
 {{!-- <script src="/javascript/delete-budget-item.js"></script> --}}

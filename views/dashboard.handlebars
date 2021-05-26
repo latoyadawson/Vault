@@ -1,38 +1,32 @@
-
-
 <button id="logout" type="button" class="btn">logout</button>
 
 
-    <div class="d-flex justify-content-center align-items-center p-20"></div> 
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#savings">
-        Savings
-        </button>
-        {{> savings}}
+<div class="d-flex justify-content-center align-items-center p-20"></div> 
+    <button type="button" class="btn btn-primary modal-btn" data-bs-toggle="modal" data-bs-target="#savings">
+    Savings
+    </button>
+    {{> savings}}
 
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#housing">
-        Housing
-        </button>
-        {{> housing }}
+    <button type="button" class="btn btn-primary modal-btn" data-bs-toggle="modal" data-bs-target="#housing">
+    Housing
+    </button>
+    {{> housing }}
 
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#transportation">
-        Transportation
-        </button>
-        {{> transportation}}
+    <button type="button" class="btn btn-primary modal-btn" data-bs-toggle="modal" data-bs-target="#transportation">
+    Transportation
+    </button>
+    {{> transportation}}
 
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#lifestyle">
-        Lifestyle
-        </button>
-        {{> lifestyle }}
+    <button type="button" class="btn btn-primary modal-btn" data-bs-toggle="modal" data-bs-target="#lifestyle">
+    Lifestyle
+    </button>
+    {{> lifestyle }}
 
-    </div>
-
-
-{{!-- <script src="/javascript/save-budget-item.js"></script>
-<script src="/javascript/edit-budget-items.js"></script>
-<script src="/javascript/delete-budget-item.js"></script>
-<script src="/javascript/total-expenses.js"></script>
-<script src="/javascript/income.js"></script> --}}
-<script src="https://d3js.org/d3.v6.min.js"></script>
+</div>
 
 
+
+{{!-- <script src="https://d3js.org/d3.v6.min.js"></script> --}}
+
+<script src="/javascript/load-expenses.js"></script>
 <script src="/javascript/logout.js"></script>
