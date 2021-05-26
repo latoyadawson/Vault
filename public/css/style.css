@@ -1,25 +1,26 @@
 ::placeholder {
-    color: #0d6efd;
+    color: #2a58e41e;
 }
 
-input[type=text] {
+/* input[type=text] {
     outline: ;
-}
+} */
 
 input[type=text]:focus {
-    background-color: white
+    background-color: white;
+    color:black;
     
 }
 
 
 
-input[type=email] {
+/* input[type=email] {
     width: ;
 }
 
 input[type=password] {
     width: ;
-}
+} */
 
 #landing-form {
     min-height: 100vh;

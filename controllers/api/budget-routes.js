@@ -4,7 +4,7 @@ const { User, BudgetItems, Category, Income } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.get('/', (req, res) => {
-   BudgetItems.findAll({
+   BudgetItems.findAll({ //change back to find all if doesn't work
         attributes: { exclude: ['[password'] },
         attributes:[
             "id",

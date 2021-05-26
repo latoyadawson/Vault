@@ -35,10 +35,4 @@ BudgetItems.belongsTo(Category, {
 
 module.exports = { User, Category, BudgetItems, Income };
 
-  // user.associate = models => {
-  //   user.hasMany(models.roles, {
-  //     foreignKey: 'Id',
-  //     sourceKey: 'RoleId',
-  //     onDelete: 'cascade',
-  //   });
-  // };
+ 
