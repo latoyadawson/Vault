@@ -17,12 +17,8 @@ BudgetItems.init(
             allowNull: false
         },
         budget_amount: {
-            type: DataTypes.DECIMAL,
+            type: DataTypes.INTEGER,
             defaultValue: 0
-        },
-        date: {
-            type: DataTypes.DATE,
-            allowNull: false,
         },
         category_id: {
             type: DataTypes.INTEGER, 
@@ -34,7 +30,7 @@ BudgetItems.init(
         },
         user_id:{
             type: DataTypes.INTEGER, 
-            allowNull: false,
+            allowNull: true,
             references: {
                 model: 'user',
                 key: 'id'
@@ -43,7 +39,6 @@ BudgetItems.init(
     },
     {
         sequelize,
-        timestamps: false,
         freezeTableName: true,
         underscored: true,
         modelName: 'budgetItem'

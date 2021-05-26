@@ -15,7 +15,15 @@ Category.init(
         name: {
             type: DataTypes.STRING,
             allowNull: false
-        }
+        },
+        // budgetItem_id: {
+        //     type: DataTypes.INTEGER, 
+        //     allowNull: false,
+        //     references: {
+        //         model: 'budgetItem',
+        //         key: 'id'
+        //     }
+        // }        
     },
     {
         sequelize,
