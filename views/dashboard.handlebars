@@ -1,32 +1,49 @@
 
 
-<button id="logout" type="button" class="btn">logout</button>
-
-
-    <div class="d-flex justify-content-center align-items-center p-20"></div> 
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#savings">
-        Savings
+{{!-- <button id="logout" type="button" class="btn">logout</button> --}}
+<div id="dashboard-div">
+    <div id="canvas-div">
+        <div id="canvas1">
+            <canvas></canvas>
+        </div>
+        <div id="canvas2">
+            <canvas></canvas>
+        </div>
+        <div id="canvas3">
+            <canvas></canvas>
+        </div>
+        <div id="canvas4">
+            <canvas></canvas>
+        </div>
+    </div>
+    <div id="dashboard-button-div">
+        <button type="button" class="btn btn-outline-primary btn-xxl-dashboard" data-bs-toggle="modal" data-bs-target="#savings">
+            Savings
         </button>
         {{> savings}}
 
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#housing">
-        Housing
+        <button type="button" class="btn btn-outline-primary btn-xxl-dashboard" data-bs-toggle="modal" data-bs-target="#housing">
+            Housing
         </button>
         {{> housing }}
 
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#transportation">
-        Transportation
+        <button type="button" class="btn btn-outline-primary btn-xxl-dashboard" data-bs-toggle="modal" data-bs-target="#transportation">
+            Transportation
         </button>
         {{> transportation}}
 
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#lifestyle">
-        Lifestyle
+        <button type="button" class="btn btn-outline-primary btn-xxl-dashboard" data-bs-toggle="modal" data-bs-target="#lifestyle">
+            Lifestyle
         </button>
         {{> lifestyle }}
 
+        <button type="button" class="trigger">
+            custom modal
+        </button>
+        {{>mycustommodal}}
+
     </div>
-
-
+</div>
 {{!-- <script src="/javascript/save-budget-item.js"></script>
 <script src="/javascript/edit-budget-items.js"></script>
 <script src="/javascript/delete-budget-item.js"></script>
@@ -36,3 +53,4 @@
 
 
 <script src="/javascript/logout.js"></script>
+<script src="/javascript/custommodal.js"></script>

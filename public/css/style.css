@@ -2,9 +2,9 @@
     color: #0d6efd;
 }
 
-input[type=text] {
-    outline: ;
-}
+/* input[type=text] {
+    outline: 
+} */
 
 input[type=text]:focus {
     background-color: white
@@ -13,13 +13,13 @@ input[type=text]:focus {
 
 
 
-input[type=email] {
-    width: ;
-}
+/* input[type=email] {
+    width: 5vh;
+} */
 
-input[type=password] {
-    width: ;
-}
+/* input[type=password] {
+    width: 5vh;
+} */
 
 #landing-form {
     min-height: 100vh;
@@ -66,6 +66,48 @@ input[type=password] {
     border-radius: 20px;
 }
 
+#dashboard-div {
+    min-height: 100vh;
+    /* min-width: 100vh; */
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#canvas-div {
+    display: flex;
+    justify-content: space-evenly;
+    /* min-height: 50vh; */
+    
+}
+
+#canvas1 {
+    background-color: thistle;
+}
+
+#canvas2 {
+    background-color: thistle;
+}
+
+#canvas3 {
+    background-color: thistle;
+}
+
+#canvas4 {
+    background-color: thistle;
+}
+
+
+
+
+#dashboard-button-div {
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+}
+
 #firstname-signup {
     outline: none;
     
@@ -100,6 +142,40 @@ input[type=password] {
     padding: 4vh 9vh;
     font-size: 7vh;
     border-radius: 4.5vh;
+}
+
+.btn-xxl-dashboard {
+    padding: 4vh 9vh;
+    font-size: 3vh;
+    border-radius: 4.5vh;
+}
+
+.mycustommodal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    /* width: 100%;
+    height: 100%; */
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+
+/* .mycustommodal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+} */
+
+.show-modal {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 }
 
 
