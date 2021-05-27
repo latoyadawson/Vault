@@ -1,34 +1,49 @@
+<div>
+    <button id="logout" type="button" class="btn btn-outline-primary btn-xl">logout</button>
+</div>    
+    
+<div id="dashboard-div">
+    <div id="canvas-div">
+        <div id="canvas1">
+            <p id="canvasp">$400</p>
+        </div>
+        <div id="canvas2">
+            <p id="canvasp">$400</p>
+        </div>
+        <div id="canvas3">
+            <p id="canvasp">$400</p>
+        </div>
+        <div id="canvas4">
+            <p id="canvasp">$400</p>
+        </div>
+    </div>
+    <div id="dashboard-button-div">
+        <button type="button" class="btn btn-outline-primary btn-xxl-dashboard savings-modal-btn">
+            Savings
+        </button>
+        {{> savings2 }}
 
-<button id="logout" type="button" class="btn">logout</button>
+        <button type="button" id="xx" class="btn btn-outline-primary btn-xxl-dashboard housing-modal-btn">
+            Housing
+        </button>
+        {{> housing2 }}
 
+        <button type="button" class="btn btn-outline-primary btn-xxl-dashboard transportation-modal-btn">
+            Transportation
+        </button>
+        {{> transportation2 }}
 
+        <button type="button" class="btn btn-outline-primary btn-xxl-dashboard lifestyle-modal-btn">
+            Lifestyle
+        </button>
+        {{> lifestyle2 }}
 
-<div class="d-flex justify-content-center align-items-center p-20"></div> 
-    <button type="button" id='1' class="btn btn-primary modal-btn" data-bs-toggle="modal" data-bs-target="#savings">
-    Savings
-    </button>
-    {{> savings }}
-
-    <button type="button" class="btn btn-primary modal-btn" data-bs-toggle="modal" data-bs-target="#housing">
-    Housing
-    </button>
-    {{> housing }}
-
-    <button type="button" class="btn btn-primary modal-btn" data-bs-toggle="modal" data-bs-target="#transportation">
-    Transportation
-    </button>
-    {{> transportation}}
-
-    <button type="button" class="btn btn-primary modal-btn" data-bs-toggle="modal" data-bs-target="#lifestyle">
-    Lifestyle
-    </button>
-    {{> lifestyle }}
+    </div>
 
 </div>
 
-
-
-{{!-- <script src="https://d3js.org/d3.v6.min.js"></script> --}}
-
-
+<script src="/javascript/lifestyle.js"></script>
+<script src="/javascript/transportationmodal.js"></script>
+<script src="/javascript/housingmodal.js"></script>
+<script src="/javascript/savingsmodal.js"></script>
 <script src="/javascript/logout.js"></script>
