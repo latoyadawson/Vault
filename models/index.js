@@ -12,7 +12,7 @@ const Income = require('./Income');
 // });
 
 User.hasMany(BudgetItems, {
-  foreignKey: 'user_id'
+foreignKey: 'user_id'
 });
 
 BudgetItems.belongsTo(User, {
@@ -35,10 +35,4 @@ BudgetItems.belongsTo(Category, {
 
 module.exports = { User, Category, BudgetItems, Income };
 
-  // user.associate = models => {
-  //   user.hasMany(models.roles, {
-  //     foreignKey: 'Id',
-  //     sourceKey: 'RoleId',
-  //     onDelete: 'cascade',
-  //   });
-  // };
+ 

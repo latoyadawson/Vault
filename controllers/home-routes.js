@@ -19,10 +19,8 @@ router.get('/signup', (req, res) => {
     res.render('signup');
 });
 
-router.get('/dashboard',(req, res) => {
-
-    // add .then before res.render
-     
+router.get('/dashboard', withAuth, (req, res) => {
+    res.render('dashboard'); 
         // ToDo 
         // GET routes retreiving objects from our model structure 
         // that we want available in the Handlebars

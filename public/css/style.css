@@ -1,24 +1,37 @@
 ::placeholder {
-    color: #0d6efd;
+    color: #2a58e41e;
 }
 
 /* input[type=text] {
+<<<<<<< HEAD
     outline: 
+=======
+    outline: ;
+>>>>>>> b261285500bcf17ef1281bc028b1f61c34bea217
 } */
 
 input[type=text]:focus {
-    background-color: white
+    background-color: white;
+    color:black;
     
 }
 
 
 
 /* input[type=email] {
+<<<<<<< HEAD
     width: 5vh;
 } */
 
 /* input[type=password] {
     width: 5vh;
+=======
+    width: ;
+}
+
+input[type=password] {
+    width: ;
+>>>>>>> b261285500bcf17ef1281bc028b1f61c34bea217
 } */
 
 #landing-form {

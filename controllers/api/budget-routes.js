@@ -4,7 +4,7 @@ const { User, BudgetItems, Category, Income } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.get('/', (req, res) => {
-   BudgetItems.findAll({
+   BudgetItems.findAll({ //change back to find all if doesn't work
         attributes: { exclude: ['[password'] },
         attributes:[
             "id",
@@ -96,23 +96,5 @@ router.put('/:id', (req, res) => {
 
 });
 
-// router.delete('/:id', (req, res) => {
-//     User.destroy({
-//             where: {
-//                 id: req.params.id
-//             }
-//         })
-//         .then(dbUserData => {
-//             if (!dbUserData) {
-//                 res.status(404).json({ message: 'No budget item found with this id' });
-//                 return;
-//             }
-//             res.json(dbUserData);
-//         })
-//         .catch(err => {
-//             console.log(err);
-//             res.status(500).json(err);
-//         });
-// });
 
 module.exports = router;
