@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Budget, User, BudgetItems, Category } = require('../models');
+const { User, BudgetItems, Category } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', (req, res) => {
@@ -21,7 +21,6 @@ router.get('/signup', (req, res) => {
 });
 
 router.get('/dashboard', withAuth, (req, res) => {
-    // res.render('dashboard'); 
    BudgetItems.findAll({
         attributes: [
             'id',
@@ -42,23 +41,23 @@ router.get('/dashboard', withAuth, (req, res) => {
     })
     .then(dbBudgetData => {
         const budget = dbBudgetData.map(data => data.get({ plain: true }));
-        function testReturn() {
-            // if(dbBudgetData.category_id = 1 && dbBudgetData.name === 'Saving Account') {
-            //     res.render('dashboard',{budget_amount, loggedIn: req.session.loggedIn});
-            // }
-            if(budget.category_id = 1 && budget.name === 'Saving Account') {
-               res.render('dashboard', budget.budget_amount) 
-                // res.render('dashboard',{budget_amount, loggedIn: req.session.loggedIn});
-            }
-        };
-        const savings = {
-            savingsAccount: testReturn(),
-            checkingAccount: 20,
-            investmentAccount:30,
-            retirementAccount: 40,
-        }
+        // function testReturn() {
+        //     // if(dbBudgetData.category_id = 1 && dbBudgetData.name === 'Saving Account') {
+        //     //     res.render('dashboard',{budget_amount, loggedIn: req.session.loggedIn});
+        //     // }
+        //     if(budget.category_id = 1 && budget.name === 'Saving Account') {
+        //        res.render('dashboard', budget.budget_amount) 
+        //         // res.render('dashboard',{budget_amount, loggedIn: req.session.loggedIn});
+        //     }
+        // };
+        // const savings = {
+        //     savingsAccount: testReturn(),
+        //     checkingAccount: 20,
+        //     investmentAccount:30,
+        //     retirementAccount: 40,
+        // }
 
-        // res.render('dashboard', { budget, loggedIn: req.session.loggedIn });
+        res.render('dashboard', { budget, loggedIn: req.session.loggedIn });
         // res.render('dashboard', { savings, loggedIn: req.session.loggedIn });
     })
     .catch(err => {
@@ -66,7 +65,6 @@ router.get('/dashboard', withAuth, (req, res) => {
         res.status(500).json(err);
     });
 });
-
 
 
 
