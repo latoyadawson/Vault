@@ -20,7 +20,9 @@ router.get('/signup', (req, res) => {
 });
 
 router.get('/dashboard',(req, res) => {
-    res.render('dashboard'); 
+
+    // add .then before res.render
+     
         // ToDo 
         // GET routes retreiving objects from our model structure 
         // that we want available in the Handlebars
@@ -46,7 +48,7 @@ router.get('/dashboard',(req, res) => {
         //     console.log(err);
         //     res.status(500).json(err);
         // });
-
+        res.render('dashboard');
 
 
 });

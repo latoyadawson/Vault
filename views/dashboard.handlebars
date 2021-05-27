@@ -1,46 +1,49 @@
 
 
-{{!-- <button id="logout" type="button" class="btn">logout</button> --}}
+<div>
+    <button id="logout" type="button" class="btn btn-outline-primary btn-xl">logout</button>
+</div>    
+    
 <div id="dashboard-div">
     <div id="canvas-div">
         <div id="canvas1">
-            <canvas></canvas>
+            <p id="canvasp">$400</p>
         </div>
         <div id="canvas2">
-            <canvas></canvas>
+            <p id="canvasp">$400</p>
         </div>
         <div id="canvas3">
-            <canvas></canvas>
+            <p id="canvasp">$400</p>
         </div>
         <div id="canvas4">
-            <canvas></canvas>
+            <p id="canvasp">$400</p>
         </div>
     </div>
     <div id="dashboard-button-div">
-        <button type="button" class="btn btn-outline-primary btn-xxl-dashboard" data-bs-toggle="modal" data-bs-target="#savings">
+        <button type="button" class="btn btn-outline-primary btn-xxl-dashboard savings-modal-btn">
             Savings
         </button>
-        {{> savings}}
+        {{> savings2 }}
 
-        <button type="button" class="btn btn-outline-primary btn-xxl-dashboard" data-bs-toggle="modal" data-bs-target="#housing">
+        <button type="button" id="xx" class="btn btn-outline-primary btn-xxl-dashboard housing-modal-btn">
             Housing
         </button>
-        {{> housing }}
+        {{> housing2 }}
 
-        <button type="button" class="btn btn-outline-primary btn-xxl-dashboard" data-bs-toggle="modal" data-bs-target="#transportation">
+        <button type="button" class="btn btn-outline-primary btn-xxl-dashboard transportation-modal-btn">
             Transportation
         </button>
-        {{> transportation}}
+        {{> transportation2 }}
 
-        <button type="button" class="btn btn-outline-primary btn-xxl-dashboard" data-bs-toggle="modal" data-bs-target="#lifestyle">
+        <button type="button" class="btn btn-outline-primary btn-xxl-dashboard lifestyle-modal-btn">
             Lifestyle
         </button>
-        {{> lifestyle }}
+        {{> lifestyle2 }}
 
-        <button type="button" class="trigger">
+        {{!-- <button type="button" class="trigger">
             custom modal
         </button>
-        {{>mycustommodal}}
+        {{>savings2}} --}}
 
     </div>
 </div>
@@ -49,8 +52,12 @@
 <script src="/javascript/delete-budget-item.js"></script>
 <script src="/javascript/total-expenses.js"></script>
 <script src="/javascript/income.js"></script> --}}
-<script src="https://d3js.org/d3.v6.min.js"></script>
+{{!-- <script src="https://d3js.org/d3.v6.min.js"></script> --}}
 
-
+{{!-- <script src="/javascript/lifestyle.js"></script> --}}
+{{!-- <script src="/javascript/transportationmodal.js"></script> --}}
+{{!-- <script src="/javascript/housingmodal.js"></script> --}}
+{{!-- <script src="/javascript/savingsmodal.js"></script> --}}
 <script src="/javascript/logout.js"></script>
-<script src="/javascript/custommodal.js"></script>
+{{!-- <script src="/javascript/custommodal.js"></script> --}}
+
