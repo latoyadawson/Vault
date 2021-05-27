@@ -1,6 +1,6 @@
-
+ 
 {{ log testingbudget }}
-{{#if testingbudget.name = 1}} 
+
 
    
 
@@ -20,9 +20,10 @@
                         <label for="savings-budget" class="col-sm-6 col-form-label">Savings Account</label> <br />
                         <div class="input-group col-form-label col-sm-6">
                             <span class="input-group-text">$</span>
-                            <input type="text" class="form-control" id="savings-budget" name="budget-amount" value="0" placeholder="please enter amount" />
+                            <input type="text" class="form-control" id="savings-budget" name="budget-amount" value="{{testingbudget}}" placeholder="please enter amount" />
                         </div> 
                     </div>
+                
      
                     <!-- checking account $ amount input -->
                     <div class="row mb-3">
@@ -57,8 +58,6 @@
         </div>
     </div>  
 </div>
-{{/if}}
+
 
 <script src="/javascript/save-saving-budget-item.js"></script>
-{{!-- <script src="/javascript/edit-budget-items.js"></script>
-<script src="/javascript/delete-budget-item.js"></script> --}}
