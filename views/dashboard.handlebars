@@ -2,10 +2,14 @@
 
 
 <div class="d-flex justify-content-center align-items-center p-20"></div> 
-    <button type="button" class="btn btn-primary modal-btn" data-bs-toggle="modal" data-bs-target="#savings">
+    <button type="button" id='1' class="btn btn-primary modal-btn" data-bs-toggle="modal" data-bs-target="#savings">
     Savings
     </button>
-    {{> savings}}
+    {{#if budget.category.id = 1 && budget.name}} 
+
+    {{> savings testingbudget = budget}}
+    {{/if}}
+    
 
     <button type="button" class="btn btn-primary modal-btn" data-bs-toggle="modal" data-bs-target="#housing">
     Housing
@@ -28,5 +32,5 @@
 
 {{!-- <script src="https://d3js.org/d3.v6.min.js"></script> --}}
 
-<script src="/javascript/load-expenses.js"></script>
+{{!-- <script src="/javascript/load-expenses.js"></script> --}}
 <script src="/javascript/logout.js"></script>
