@@ -1,11 +1,12 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Budget, User } = require('../models');
+const { User, BudgetItems, Category } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', (req, res) => {
     res.render('landing');
 });
+
 
 router.get('/login', (req, res) => {
     if(req.session.loggedIn) {
@@ -20,36 +21,53 @@ router.get('/signup', (req, res) => {
 });
 
 router.get('/dashboard', withAuth, (req, res) => {
-    res.render('dashboard'); 
-        // ToDo 
-        // GET routes retreiving objects from our model structure 
-        // that we want available in the Handlebars
-        // homepage template go here
-        //
-        //  The following will go at the end, but using our parameters.
-        //  This will loop over and map each Sequelize object into a
-        //  serialized version of itself, saving the results in a new array.
-        //  Then we can plug that array into the Homepage template.
-        //  Passing an array to the template will break the page unless the
-        //  built in helpers of Handlebars are used. Offers minimal logic-like
-        //  looping over an array. Just remember to use Octothorps in the template.
-        //  just using handlebars will look for an object with a property of the key,
-        //  eg. id property, title property. {{#each}} tells handlebars to begin the
-        //  loop through the array and {{/each}} where to end.
-        //  
-        //  
-        // }) .then(dbPostData => {
-        //     dbPostData.get({ plain: true});
-        //     res.render('dashboard');
-        // })
-        // .catch(err => {
-        //     console.log(err);
-        //     res.status(500).json(err);
-        // });
-        res.render('dashboard');
+   BudgetItems.findAll({
+        attributes: [
+            'id',
+            'name',
+            'budget_amount',
+            'category_id'
+        ],
+        include: [
+            {
+                model: User,
+                attributes: ['id']
+            },
+            {
+                model: Category,
+                attributes: ['id']
+            }
+        ]
+    })
+    .then(dbBudgetData => {
+        const budget = dbBudgetData.map(data => data.get({ plain: true }));
+        // function testReturn() {
+        //     // if(dbBudgetData.category_id = 1 && dbBudgetData.name === 'Saving Account') {
+        //     //     res.render('dashboard',{budget_amount, loggedIn: req.session.loggedIn});
+        //     // }
+        //     if(budget.category_id = 1 && budget.name === 'Saving Account') {
+        //        res.render('dashboard', budget.budget_amount) 
+        //         // res.render('dashboard',{budget_amount, loggedIn: req.session.loggedIn});
+        //     }
+        // };
+        // const savings = {
+        //     savingsAccount: testReturn(),
+        //     checkingAccount: 20,
+        //     investmentAccount:30,
+        //     retirementAccount: 40,
+        // }
 
-
+        res.render('dashboard', { budget, loggedIn: req.session.loggedIn });
+        // res.render('dashboard', { savings, loggedIn: req.session.loggedIn });
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
+
+
+
 
 
 
