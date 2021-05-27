@@ -1,14 +1,12 @@
 async function loadBudgetFormHandler(event) {
   event.preventDefault();
 
+      // const id = window.location.toString().split('/')[
+      //   window.location.toString().split('/').length -1
   // const budget_amount = document.querySelector('input[name="post-title"]').value;
 
-  const response = await fetch(`/api/budgets/`, {
+  const response = await fetch(`/api/budgets/${id}`, {
     method: 'GET',
-    body: JSON.stringify({
-      budget_amount,
-      date
-    }),
     headers: {
       'Content-Type': 'application/json'
     }
