@@ -1,0 +1,57 @@
+<!-- Modal for Lifestyle budget-->
+<div id="lifestyle" class="modal fade" tabindex="-1"  aria-labelledby="lifestyleLabel" aria-hidden="true">
+     <div class="modal-dialog">      
+        <div class="modal-content"> 
+            <div class="modal-header">
+                <h3 id="lifestyleLabel">Lifestyle Budget</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
+            </div>
+            <div class="expense-form modal-body" id="expense-form">
+                <form action="" id="expForm">
+                    
+                    <!-- entertainment $ amount input -->
+                    <div class="row mb-3">
+                        <label for="entertainment-budget" class="col-sm-6 col-form-label">Entertainment</label> <br />
+                        <div class="input-group col-form-label col-sm-6">
+                            <span class="input-group-text">$</span>
+                            <input type="number" id="entertainment-budget" class="form-control" placeholder="please enter amount" value="0"/>
+                        </div>
+                    </div>
+                  
+                    <!-- clothing $ input-->
+                    <div class="row mb-3">
+                        <label for="clothing-budget" class="col-sm-6 col-form-label">Clothing</label> <br />
+                        <div class="input-group col-form-label col-sm-6">
+                            <span class="input-group-text">$</span>
+                            <input type="number" id="clothing-budget"  class="form-control" placeholder="please enter amount" value="0"/>
+                        </div>
+                    </div>
+                  
+                    <!-- travel $ input-->
+                    <div class="row mb-3">
+                        <label for="travel-budget" class="col-sm-6 col-form-label">Travel</label> <br />
+                        <div class="input-group col-form-label col-sm-6">
+                            <span class="input-group-text">$</span>
+                            <input type="number" id="travel-budget" class="form-control" placeholder="please enter amount" value="0"/>
+                        </div>
+                    </div>
+                  
+                    <!-- dining $ input-->
+                    <div class="row mb-3">
+                        <label for="dining-budget" class="col-sm-6 col-form-label">Dining</label> <br />
+                        <div class="input-group col-form-label col-sm-6">
+                            <span class="input-group-text">$</span>
+                            <input type="number" id="dining-budget" class="form-control" placeholder="please enter amount" value="0"/>
+                        </div>
+                    </div>
+                    <!-- buttons-->
+            
+                </form>
+                <button type="submit" id="save-lifestyle-btn">Save Budget</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/javascript/save-lifestyle-budget-item.js"></script>
+{{!-- <script src="/javascript/edit-budget-items.js"></script> --}}
+{{!-- <script src="/javascript/delete-budget-item.js"></script> --}}

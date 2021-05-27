@@ -1,0 +1,55 @@
+<!-- Transportation budget-->
+<div id="transportation" class="modal fade" tabindex="-1" aria-labelledby="transportationLabel" aria-hidden="true">
+    <div class="modal-dialog">       
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="transportationLabel">Transportation</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="Close"></button>
+            </div>
+            <div class="modal-body expense-form " id="expense-form">
+                <form action="" id="expForm">
+
+                    <!-- vehicle payment $ amount input -->
+                    <div class="row mb-3">
+                        <label for="vehicle-budget" class="col-sm-6 col-form-label">Vehicle payment</label> <br />
+                        <div class="input-group col-form-label col-sm-6">
+                            <span class="input-group-text">$</span>
+                            <input type="number" id="vehicle-budget" class="form-control" placeholder="please enter amount" value="0"/>
+                        </div>
+                    </div>
+                 
+                    <!-- gas $ input-->
+                    <div class="row mb-3">
+                        <label for="gas-budget" class="col-sm-6 col-form-label">Gas</label> <br />
+                        <div class="input-group col-form-label col-sm-6">
+                            <span class="input-group-text">$</span>
+                            <input type="number" id="gas-budget" class="form-control" placeholder="please enter amount" />
+                        </div>
+                    </div>
+
+                    <!-- subway/bus $ input-->
+                    <div class="row mb-3">
+                        <label for="public-transporation-budget" class="col-sm-6 col-form-label">Public Transportation</label> <br />
+                        <div class="input-group col-form-label col-sm-6">
+                            <span class="input-group-text">$</span>
+                            <input type="number" id="public-transportation-budget" class="form-control" placeholder="please enter amount" value="0" />
+                        </div>
+                    </div>
+              
+                    <!-- repairs $ input-->
+                    <div class="row mb-3">
+                        <label for="insurance-budget" class="col-sm-6 col-form-label">Car Insurance</label> <br />
+                        <div class="input-group col-form-label col-sm-6">
+                            <span class="input-group-text">$</span>
+                            <input type="number" id="insurance-budget" class="form-control" placeholder="please enter amount" value="0" />
+                        </div>
+                    </div>
+                </form>
+                 <button type="submit" id="save-transportation-btn">Save Budget</button>
+            </div>
+        </div>
+    </div>        
+</div>
+<script src="/javascript/save-transport-budget-item.js"></script>
+{{!-- <script src="/javascript/edit-budget-items.js"></script> --}}
+{{!-- <script src="/javascript/delete-budget-item.js"></script> --}}

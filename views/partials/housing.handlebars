@@ -1,0 +1,65 @@
+<!-- Modal for Housing budget-->
+<div id="housing" class="modal fade" tabindex="-1"  aria-labelledby="housingLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="housingLabel">Housing Budget</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"  aria-label="Close"></button>
+            </div>
+            <div class="modal-body expense-form " id="expense-form">
+                <form action="" id="housingForm" class="housings">
+                    
+                    <!-- Mortgage/rent $ amount input -->                    
+                    <div class="row mb-3">
+                        <label for="mortgag-rent-budget" class="col-sm-6 col-form-label">Mortgage | Rent</label> <br />
+                        <div class="input-group col-form-label col-sm-6">
+                            <span class="input-group-text">$</span>
+                            <input type="number"  id="mortgage-rent-budget" class="form-control" placeholder="please enter amount" value="0"/>
+                        </div>
+                    </div>
+                    
+                    <!-- utilities $ input-->
+                    <div class="row mb-3">
+                        <label for="utilities-budget" class="col-sm-6 col-form-label">Utilities</label> <br />
+                        <div class="input-group col-form-label col-sm-6">
+                            <span class="input-group-text">$</span>
+                            <input type="number" id="utilities-budget" class="form-control" placeholder="please enter amount" value="0"/>
+                        </div>
+                    </div>
+                    
+                    <!-- repairs $ input-->
+                    <div class="row mb-3">
+                        <label for="repairs-budget" class="col-sm-6 col-form-label">Repairs</label> <br />
+                        <div class="input-group col-form-label col-sm-6">
+                            <span class="input-group-text">$</span>
+                            <input type="number" id="repairs-budget" class="form-control" placeholder="please enter amount" value="0"/>
+                        </div>
+                    </div>
+                    
+                    <!-- remodeling $ input-->
+                    <div class="row mb-3">
+                        <h4></h4>
+                        <label for="remodeling-budget" class="col-sm-6 col-form-label">Remodeling</label> <br />
+                        <div class="input-group col-form-label col-sm-6">
+                            <span class="input-group-text">$</span>
+                            <input type="number" id="remodeling-budget" class="form-control" placeholder="please enter amount" value="0"/>
+                        </div>
+                    </div>
+                    
+                    <!-- property taxes $ input-->
+                    <div class="row mb-3">
+                        <label for="property-taxes-budget" class="col-sm-6 col-form-label">Property Taxes</label> <br />
+                        <div class="input-group col-form-label col-sm-6">
+                            <span class="input-group-text">$</span>
+                            <input type="number" id="property-taxes-budget" class="form-control" placeholder="please enter amount" value="0"/>
+                        </div>
+                    </div>
+                </form>
+                <button type="submit" id="save-housing-btn">Save Budget</button>
+            </div>
+        </div>
+    </div>  
+</div>
+<script src="/javascript/save-housing-budget-item.js"></script>
+{{!-- <script src="/javascript/edit-budget-items.js"></script> --}}
+{{!-- <script src="/javascript/delete-budget-item.js"></script> --}}
