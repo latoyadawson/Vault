@@ -5,10 +5,10 @@ async function loadBudgetFormHandler(event) {
 
   const response = await fetch(`/api/budgets/`, {
     method: 'GET',
-    body: JSON.stringify({
-      budget_amount,
-      date
-    }),
+    // body: JSON.stringify({
+    //   budget_amount,
+    //   date
+    // }),
     headers: {
       'Content-Type': 'application/json'
     }
@@ -22,4 +22,4 @@ async function loadBudgetFormHandler(event) {
 };
 
 //replace tbd with class or id 
-document.querySelector('.modal-btn').addEventListener('click', loadBudgetFormHandler);
+// document.querySelector('.modal-btn').addEventListener('click', loadBudgetFormHandler);

@@ -1,5 +1,4 @@
 async function saveSavingFormHandler(event) {
-  console.log("hi");
   event.preventDefault();
     
   //-------------------- Saving Budget --------------------//
