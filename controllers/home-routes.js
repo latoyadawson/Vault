@@ -35,12 +35,14 @@ router.get('/dashboard', withAuth, (req, res) => {
             },
             {
                 model: Category,
-                attributes: ['id']
+                attributes:['id']
             }
-        ]
+        ],
+        raw:true
     })
     .then(dbBudgetData => {
-        const budget = dbBudgetData.map(data => data.get({ plain: true }));
+        console.log("Handlebars check",dbBudgetData)
+        //const budget = dbBudgetData.map(data => data.get({ plain: true }));
         // function testReturn() {
         //     // if(dbBudgetData.category_id = 1 && dbBudgetData.name === 'Saving Account') {
         //     //     res.render('dashboard',{budget_amount, loggedIn: req.session.loggedIn});
@@ -57,7 +59,32 @@ router.get('/dashboard', withAuth, (req, res) => {
         //     retirementAccount: 40,
         // }
 
-        res.render('dashboard', { budget, loggedIn: req.session.loggedIn });
+        let total = [{
+            saving:0,
+            housing:0,
+            transportation:0,
+            lifestyle:0
+        }]
+        let saving = 0
+        let housing = 0
+        let transportation = 0
+        let lifestyle = 0
+        for(let i =0;i<dbBudgetData.length;i++){
+            if(dbBudgetData[i].category_id == 1){
+            saving +=  dbBudgetData[i].budget_amount
+            }
+            else if(dbBudgetData[i].category_id == 2) {
+                housing += dbBudgetData[i].budget_amount
+            }
+            else if(dbBudgetData[i].category_id == 3) {
+                transportation += dbBudgetData[i].budget_amount
+            }
+            else if(dbBudgetData[i].category_id == 4) {
+                lifestyle += dbBudgetData[i].budget_amount
+            }
+        }
+        console.log(total)
+        res.render('dashboard', { saving:saving,housing:housing,transportation:transportation,lifestyle:lifestyle, loggedIn: req.session.loggedIn });
         // res.render('dashboard', { savings, loggedIn: req.session.loggedIn });
     })
     .catch(err => {

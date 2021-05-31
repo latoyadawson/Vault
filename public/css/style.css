@@ -1,45 +1,67 @@
 ::placeholder {
-    color: #2a58e41e;
+    color: #0d6efd;
 }
 
-/* input[type=text] {
-<<<<<<< HEAD
-    outline: 
-=======
-    outline: ;
->>>>>>> b261285500bcf17ef1281bc028b1f61c34bea217
-} */
+:hover::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: rgb(255, 255, 255);
+}
+
+:hover::-moz-placeholder { /* Firefox 19+ */
+    color: rgb(255, 255, 255);
+}
+
+body {
+    background-color: aliceblue !important;
+}
+
+/* input text css */
 
 input[type=text]:focus {
     background-color: white;
-    color:black;
+    color:#0d6efd;
+    outline: none;
+}
+
+input[type=text]:hover {
+    background-color: #0d6dfd90;
+    color: white;
+}
+
+/* input email css */
+
+input[type=email]:focus {
+    background-color: white;
+    color:#0d6efd;
+    outline: none;
     
 }
 
-
-
-/* input[type=email] {
-<<<<<<< HEAD
-    width: 5vh;
-} */
-
-/* input[type=password] {
-    width: 5vh;
-=======
-    width: ;
+input[type=email]:hover {
+    background-color: #0d6dfd90;
+    color: white;
 }
 
-input[type=password] {
-    width: ;
->>>>>>> b261285500bcf17ef1281bc028b1f61c34bea217
-} */
+/* input password css */
+
+input[type=password]:focus {
+    background-color: white;
+    color:#0d6efd;
+    outline: none;
+    
+}
+
+input[type=password]:hover {
+    background-color: #0d6dfd90;
+    color: white;
+}
 
 #landing-form {
     min-height: 100vh;
-    display: flex;
-    justify-content: center;
+    display: grid;
     align-items: center;
     justify-content: space-evenly;
+    padding-bottom: 80px;
+    padding-block: 200px;
 }
 
 #signup-form {
@@ -136,23 +158,6 @@ input[type=password] {
     justify-content: space-evenly;
 }
 
-#firstname-signup {
-    outline: none;
-    
-}
-
-#lastname-signup {
-    outline: none;
-}
-
-#email-signup {
-    outline: none;
-}
-
-#password-signup {
-    outline: none;
-}
-
 #logout {
     float: right;
     margin: 4vh 4vh 0 0;
@@ -193,9 +198,6 @@ input[type=password] {
     border: 1px solid #0d6efd;
     padding: 6vh;
     border-radius: 20px;
-    /* width: 100%;
-    height: 100%; */
-    /* background-color: rgba(0, 0, 0, 0.5); */
     opacity: 0;
     visibility: hidden;
     transform: scale(1.1);
@@ -204,18 +206,17 @@ input[type=password] {
 
 .cust-modal-input {
     padding: 5px 10px;
-    font-size: 10px;
+    font-size: 20px;
     border-radius: 10px;
+    color: #0d6efd;
 }
 
-.show-modal {
-    opacity: 1;
-    visibility: visible;
-    transform: scale(1.0);
-    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+.blur {
+    filter: blur(7px);
 }
 
-.savings-modal {
+
+.savings-modal, .housing-modal, .transportation-modal, .lifestyle-modal {
     position: fixed;
     display: flex;
     flex-direction: column;
@@ -225,9 +226,6 @@ input[type=password] {
     border: 1px solid #0d6efd;
     padding: 6vh;
     border-radius: 20px;
-    /* width: 100%;
-    height: 100%; */
-    /* background-color: rgba(0, 0, 0, 0.5); */
     opacity: 0;
     visibility: hidden;
     transform: scale(1.1);
@@ -241,83 +239,40 @@ input[type=password] {
     visibility: visible;
     transform: scale(1.0);
     transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
-    background-color: rgba(219, 208, 208, 0.9);
+    background-color: #506c96;
+
 }
 
-.housing-modal {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    left: 40%;
-    top: 9%;
-    gap: 3vh;
-    border: 1px solid #0d6efd;
-    padding: 6vh;
-    border-radius: 20px;
-    /* width: 100%;
-    height: 100%; */
-    /* background-color: rgba(0, 0, 0, 0.5); */
-    opacity: 0;
-    visibility: hidden;
-    transform: scale(1.1);
-    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+/* Logo STARTS here */
+.vaultLogo {
+    margin-top: 30px;
+    margin-left: 35px;
+    position: absolute;
+    width: 100px;
+  }
+
+  .rotate {
+    animation: rotation 8s infinite linear;
+  }
+  
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+
+  /* Logo ENDS here */
+
+/* DARK MODE STYLE */
+
+  .darkmode-toggle--white {
+    background: orange !important;
 }
 
-.show-housing-modal {
-    opacity: 1;
-    visibility: visible;
-    transform: scale(1.0);
-    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+.darkmode-background {
+    background: aliceblue !important;
 }
 
-.transportation-modal {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    left: 40%;
-    top: 9%;
-    gap: 3vh;
-    border: 1px solid #0d6efd;
-    padding: 6vh;
-    border-radius: 20px;
-    /* width: 100%;
-    height: 100%; */
-    /* background-color: rgba(0, 0, 0, 0.5); */
-    opacity: 0;
-    visibility: hidden;
-    transform: scale(1.1);
-    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
-}
-
-.show-transportation-modal {
-    opacity: 1;
-    visibility: visible;
-    transform: scale(1.0);
-    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
-}
-
-.lifestyle-modal {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    left: 40%;
-    top: 9%;
-    gap: 3vh;
-    border: 1px solid #0d6efd;
-    padding: 6vh;
-    border-radius: 20px;
-    /* width: 100%;
-    height: 100%; */
-    /* background-color: rgba(0, 0, 0, 0.5); */
-    opacity: 0;
-    visibility: hidden;
-    transform: scale(1.1);
-    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
-}
-
-.show-lifestyle-modal {
-    opacity: 1;
-    visibility: visible;
-    transform: scale(1.0);
-    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
-}
