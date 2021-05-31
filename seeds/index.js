@@ -9,7 +9,7 @@ const seedAll = async() => {
     await seedCategory();
     console.log('\n----- CATEGORY SEEDED -----\n');
 
-    process.exit(0);
+    // process.exit(0);
 };
 
 seedAll();

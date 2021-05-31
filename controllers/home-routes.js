@@ -19,20 +19,22 @@ router.get('/login', (req, res) => {
 
 router.get('/signup', (req, res) => {
     
-    if(req.session.loggedIn) {
-        res.redirect('/dashboard/'+ req.session.user_id);
+    // if(req.session.loggedIn) {
         
-        return;
-    } 
+    //     res.redirect('/dashboard/'+ req.session.user_id);
+        
+    //     return;
+    // } 
+    
     res.render('signup') 
 });
 
-router.get('/success', (req, res) => {
-    console.log(req.session.user_id);
+// router.get('/success', (req, res) => {
+//     console.log(req.session.user_id);
    
-});
+// });
 
-router.get('/dashboard', withAuth, (req, res) => {
+router.get('/dashboard', (req, res) => {
     if(req.session.loggedIn) {
         res.redirect('/dashboard/'+ req.session.user_id);
         // res.render('/dashboard/'+ req.session.user_id, { loggedIn: req.session.loggedIn });

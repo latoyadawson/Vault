@@ -20,7 +20,9 @@ async function signupFormHandler(event) {
         });
 
         if (response.ok) {
-            document.location.replace('/dashboard');
+            alert('You are now signed up, please login!');
+            document.location.replace('/login');
+            
           
         } else {
             alert(response.statusText);
