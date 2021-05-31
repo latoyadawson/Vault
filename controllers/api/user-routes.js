@@ -23,18 +23,11 @@ router.get('/:id', (req, res) => {
             },
             include: [ //budgets and categorys/income
                 {
-                    model: Category,
-                    attributes: ['name']
-                },
-                {
                     model: BudgetItems,
-                    attributes: ['name', 'budget_amount', 'date']
-                },
-                {
-                    model: Income,
-                    attributes: ['income_amount' , 'date']
-                }
+                    attributes: ['id','name', 'budget_amount', 'category_id'],
+                
 
+                },
             ]
         })
         .then(dbUserData => {

@@ -1,15 +1,21 @@
 <div class="transportation-modal">
+    {{!-- <div class="d-flex justify-content-end"> --}}
+            <div class=" d-flex justify-content-end">
+                <button type="button" class="btn-close" data-bs-dismiss="modal"  aria-label="Close"></button>
+            </div>
+    {{!-- </div> --}}
+    
   <label for="vehicle-budget">Vehicle payment</label>
-  <input type="text" id="vehicle-budget" class="btn-outline-primary cust-modal-input" value="0"/>
+  <input type="text" id="vehicle-budget" class="btn-outline-primary cust-modal-input" value={{vehiclePay}} />
 
   <label for="gas-budget">Gas</label>
-  <input type="text" id="gas-budget" class="btn-outline-primary cust-modal-input" value="0"/>
+  <input type="text" id="gas-budget" class="btn-outline-primary cust-modal-input" value={{gas}} />
 
   <label for="subway-bus-budget">Subway/bus</label>
-  <input type="text" id="subway-bus-budget" class="cust-modal-input btn-outline-primary" value="0"/>
+  <input type="text" id="subway-bus-budget" class="cust-modal-input btn-outline-primary" value={{publicTrans}} />
 
   <label for="vehicle-repairs-budget">Repairs</label>
-  <input type="text" id="vehicle-repairs-budget" class="cust-modal-input btn-outline-primary" value="0" />
+  <input type="text" id="vehicle-repairs-budget" class="cust-modal-input btn-outline-primary" value={{vehicleRep}} />
 
   <button type="submit" id="save-transportation-btn" class="btn btn-outline-primary btn-xxl">Save</button>
 </div>
