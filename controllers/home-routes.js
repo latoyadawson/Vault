@@ -21,7 +21,6 @@ router.get('/signup', (req, res) => {
 });
 
 router.get('/dashboard', withAuth, (req, res) => {
-    res.render('dashboard'); 
    BudgetItems.findAll({
         attributes: [
             'id',
@@ -66,7 +65,6 @@ router.get('/dashboard', withAuth, (req, res) => {
         res.status(500).json(err);
     });
 });
-
 
 
 
