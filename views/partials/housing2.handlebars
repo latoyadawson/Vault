@@ -1,26 +1,28 @@
 <div class="housing-modal">
-    <label for="mortgage-rent-budget">Mortgage/rent</label>
-    <input type="text" id="mortgage-rent-budget" class="btn-outline-primary cust-modal-input"
+    {{!-- <div class="d-flex justify-content-end"> --}}
+            <div class=" d-flex justify-content-end">
+                <button type="button" class="btn-close" data-bs-dismiss="housing-modal"  aria-label="Close"></button>
+            </div>
+    {{!-- </div> --}}
 
-        placeholder="Please enter amount" value="0"/>
+    
+    <label for="mortgage-rent-budget">Mortgage/rent</label>
+    <input type="text" id="mortgage-rent-budget" class="btn-outline-primary cust-modal-input" value={{ mortgage }} />
 
     <label for="utilities-budget">Utilities</label>
-    <input type="text" id="utilities-budget" class="btn-outline-primary cust-modal-input"
-        placeholder="Please enter budget amount" value="0" />
+    <input type="text" id="utilities-budget" class="btn-outline-primary cust-modal-input" value={{utils}} />
 
     <label for="repairs-budget">Repairs</label>
-    <input type="text" id="repairs-budget" class="cust-modal-input btn-outline-primary"
-        placeholder="Please enter budget amount" value="0" />
+    <input type="text" id="repairs-budget" class="cust-modal-input btn-outline-primary" value={{repairs}} />
 
     <label for="remodeling-budget">Remodeling</label>
-    <input type="text" id="remodeling-budget" class="cust-modal-input btn-outline-primary"
-        placeholder="Please enter budget amount" value="0" />
+    <input type="text" id="remodeling-budget" class="cust-modal-input btn-outline-primary" value={{remodel}} />
 
     <label for="property-taxes-budget">Property taxes</label>
-    <input type="text" id="property-taxes-budget" class="cust-modal-input btn-outline-primary"
-        placeholder="Please enter budget amount" value="0"/>
+    <input type="text" id="property-taxes-budget" class="cust-modal-input btn-outline-primary" value={{propertyTax}} />
 
     <button type="submit" id="save-housing-btn" class="btn btn-outline-primary btn-xxl">Save</button>
+  
 </div>
 
 <script src="/javascript/save-housing-budget-item.js"></script>

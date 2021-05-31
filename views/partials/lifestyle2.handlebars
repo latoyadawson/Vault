@@ -1,19 +1,21 @@
 <div class="lifestyle-modal">
+      {{!-- <div class="d-flex justify-content-end"> --}}
+            <div class=" d-flex justify-content-end">
+                <button type="button" class="btn-close" data-bs-dismiss="lifestyle-modal"  aria-label="Close"></button>
+            </div>
+    {{!-- </div> --}}
+    
     <label for="entertainment-budget">Entertainment</label>
-    <input type="text" id="entertainment-budget" class="btn-outline-primary cust-modal-input"
-        placeholder="Please enter amount" value="0" />
+    <input type="text" id="entertainment-budget" class="btn-outline-primary cust-modal-input" value={{entertain}} />
 
     <label for="clothing-budget">Clothing</label>
-    <input type="text" id="clothing-budget" class="btn-outline-primary cust-modal-input"
-        placeholder="Please enter budget amount" value="0"/>
+    <input type="text" id="clothing-budget" class="btn-outline-primary cust-modal-input" value={{clothing}} />
 
     <label for="travel-budget">Travel</label>
-    <input type="text" id="travel-budget" class="cust-modal-input btn-outline-primary"
-        placeholder="Please enter budget amount" value="0"/>
+    <input type="text" id="travel-budget" class="cust-modal-input btn-outline-primary" value={{travel}} />
 
     <label for="dining-budget">Dining</label>
-
-    <input type="text" id="dining-budget" class="cust-modal-input btn-outline-primary" value="0" />
+    <input type="text" id="dining-budget" class="cust-modal-input btn-outline-primary" value={{dining}} />
 
     <button type="submit" id="save-lifestyle-btn" class="btn btn-outline-primary btn-xxl">Save</button>
 </div>

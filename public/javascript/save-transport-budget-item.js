@@ -32,7 +32,9 @@ async function saveBudgetForm(budget_name, amount, category) {
   });
 
   if (response.ok) {
+    
     document.location.replace('/dashboard');
+    return;
   } else {
     console.log(response.statusText);
   }

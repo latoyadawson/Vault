@@ -1,22 +1,22 @@
 <div class="savings-modal">
+    <div class=" d-flex justify-content-end">
+        <button type="button" class="btn-close" data-bs-dismiss="savings-modal" aria-label="Close"></button>
+    </div>
+    
     <label for="savings-budget">Savings account</label>
-    <input type="text" id="savings-budget" class="btn-outline-primary cust-modal-input"
-
-        placeholder="Please enter amount" value="0"/>
-
+    <input type="text" id="savings-budget" class="btn-outline-primary cust-modal-input" value={{savingsAcc}} />
 
     <label for="checking-budget">Checking account</label>
-    <input type="text" id="checking-budget" class="btn-outline-primary cust-modal-input"
-        placeholder="Please enter budget amount" value="0"/>
+    <input type="text" id="checking-budget" class="btn-outline-primary cust-modal-input" value={{checkingAcc}} />
 
     <label for="investment-budget">Investment account</label>
-    <input type="text" id="investment-budget" class="cust-modal-input btn-outline-primary"
-        placeholder="Please enter budget amount" value="0"/>
+    <input type="text" id="investment-budget" class="cust-modal-input btn-outline-primary" value={{investAcc}} />
 
     <label for="retirement-budget">Retirement account</label>
-    <input type="text" id="retirement-budget" class="cust-modal-input btn-outline-primary"
-        placeholder="Please enter budget amount"value="0" />
+    <input type="text" id="retirement-budget" class="cust-modal-input btn-outline-primary" value={{retireAcc}} />
+
     <button type="submit" id="save-savings-btn" class="btn btn-outline-primary btn-xxl">Save</button>
+    
 </div>
 
 <script src="/javascript/save-saving-budget-item.js"></script>
