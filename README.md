@@ -12,10 +12,9 @@ Budget website where users can keep track of their income, budget a month in adv
 * Espress-session
 
 ## Screenshot
-![screenshot of homepage](assets/home.png)
-![screenshot of login page](assets/login-page.png)
-![screenshot of login page](assets/signup-page.png)
-![screenshot of new post](assets/budget.png)
+![screenshot of landing](assets/landing.png)
+![screenshot of user dashboard](assets/dashboard.png)
+
 
 ## User Story
 * AS A young profession who makes money
