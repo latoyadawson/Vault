@@ -15,7 +15,8 @@ async function saveBudgetForm(budget_name, amount, category) {
   });
 
   if (response.ok) {
-    document.location.replace('/dashboard');
+    return;
+    // document.location.replace('/dashboard');
   } else {
     console.log(response.statusText);
   }

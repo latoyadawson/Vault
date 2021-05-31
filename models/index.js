@@ -4,9 +4,14 @@ const BudgetItems = require('./BudgetItems');
 const Income = require('./Income');
 
 //create associations
-// User.hasMany(Category, {
-//     foreignKey: 'user_id'
+User.hasMany(Category, {
+    foreignKey:'user_id'
+});
+
+// Category.belongsTo(User, {
+//   foreignKey: 'user_id'
 // });
+
 // User.hasMany(Income, {
 //     foreignKey: 'user_id'
 // });
