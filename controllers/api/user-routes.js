@@ -23,18 +23,11 @@ router.get('/:id', (req, res) => {
             },
             include: [ //budgets and categorys/income
                 {
-                    model: Category,
-                    attributes: ['name']
-                },
-                {
                     model: BudgetItems,
-                    attributes: ['name', 'budget_amount', 'date']
-                },
-                {
-                    model: Income,
-                    attributes: ['income_amount' , 'date']
-                }
+                    attributes: ['id','name', 'budget_amount', 'category_id'],
+                
 
+                },
             ]
         })
         .then(dbUserData => {
@@ -62,7 +55,7 @@ router.post('/', (req, res) => {
             req.session.save(() => {
                 req.session.user_id = dbUserData.id;
                 req.session.email = dbUserData.email;
-                req.session.loggedIn = true;
+                req.session.loggedIn = false;
 
                 res.json(dbUserData);
             });

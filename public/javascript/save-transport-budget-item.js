@@ -5,8 +5,8 @@ async function saveTransportationFormHandler(event) {
 
   const vehicle_amount = document.querySelector('input[id="vehicle-budget"]').value;
   const gas_amount = document.querySelector('input[id="gas-budget"]').value;
-  const publicTransportation_amount = document.querySelector('input[id="public-transportation-budget"]').value;
-  const carInsurance_amount = document.querySelector('input[id="insurance-budget"]').value;
+  const publicTransportation_amount = document.querySelector('input[id="subway-bus-budget"]').value;
+  const carInsurance_amount = document.querySelector('input[id="vehicle-repairs-budget"]').value;
 
   saveBudgetForm("Vehicle Payment",vehicle_amount , 3);
   saveBudgetForm("Gas", gas_amount,3);
@@ -32,7 +32,9 @@ async function saveBudgetForm(budget_name, amount, category) {
   });
 
   if (response.ok) {
+    
     document.location.replace('/dashboard');
+    return;
   } else {
     console.log(response.statusText);
   }
