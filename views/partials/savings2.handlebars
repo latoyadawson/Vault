@@ -1,11 +1,7 @@
-
 <div class="savings-modal">
-      {{!-- <div class="d-flex justify-content-end"> --}}
-            <div class=" d-flex justify-content-end">
-                {{!-- <button type="button" class="btn-close" data-bs-dismiss="modal"  aria-label="Close"></button> --}}
-                <button type="button" class="btn-close" aria-label="Close"></button>
-            </div>
-    {{!-- </div> --}}
+    <div class=" d-flex justify-content-end">
+        <button type="button" class="btn-close" data-bs-dismiss="savings-modal" aria-label="Close"></button>
+    </div>
     
     <label for="savings-budget">Savings account</label>
     <input type="text" id="savings-budget" class="btn-outline-primary cust-modal-input" value={{savingsAcc}} />
@@ -19,8 +15,8 @@
     <label for="retirement-budget">Retirement account</label>
     <input type="text" id="retirement-budget" class="cust-modal-input btn-outline-primary" value={{retireAcc}} />
 
-    <button type="submit" id="save-savings-btn" class="btn btn-outline-primary btn-xxl" data-bs-dismiss="modal">Save</button>
+    <button type="submit" id="save-savings-btn" class="btn btn-outline-primary btn-xxl">Save</button>
+    
 </div>
 
 <script src="/javascript/save-saving-budget-item.js"></script>
-{{!-- <script src="/controllers/home-routes.js"></script> --}}

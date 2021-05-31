@@ -14,36 +14,35 @@ router.get('/login', (req, res) => {
         return;
     }
     res.render('login');
+    
 });
 
 router.get('/signup', (req, res) => {
+    
     if(req.session.loggedIn) {
-    res.redirect('/dashboard/'+ req.session.user_id);
-        return;s
-    }
+        res.redirect('/dashboard/'+ req.session.user_id);
+        
+        return;
+    } 
+    res.render('signup') 
+});
 
-    res.render('signup')
+router.get('/success', (req, res) => {
+    console.log(req.session.user_id);
+   
+});
+
+router.get('/dashboard', withAuth, (req, res) => {
+    if(req.session.loggedIn) {
+        res.redirect('/dashboard/'+ req.session.user_id);
+        // res.render('/dashboard/'+ req.session.user_id, { loggedIn: req.session.loggedIn });
+        return;
+    } else {
+
+    }
 });
 
 router.get('/dashboard/:id', withAuth, (req, res) => {
-    if(!BudgetItems){
-        User.findByPk(req.params.id,{
-            include: [
-                {
-                    model: BudgetItems,
-                    attributes: ['id','name', 'budget_amount', 'category_id'],
-                },
-            ]
-        }).
-        then(dbBudgetData => {
-            const budget = dbBudgetData.map(data => data.get({ plain: true }));
-            res.render('dashboard',{budget , loggedIn: req.session.loggedIn});
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-    } else {
    User.findByPk(req.params.id,{
         include: [
             {
@@ -55,6 +54,8 @@ router.get('/dashboard/:id', withAuth, (req, res) => {
     .then(dbBudgetData => {
         const budget = dbBudgetData.dataValues.budgetItems.map(data => data.get({ plain: true }));
         // console.log(budget);
+        //Note Cateogreys/ arrays
+        
         let category = [
             [
                 [],[],[],[]
@@ -90,6 +91,11 @@ router.get('/dashboard/:id', withAuth, (req, res) => {
         let clothing = 0;
         let travel = 0;
         let dining = 0;
+
+        let savingsTotal = 0;
+        let housingTotal = 0;
+        let transportationTotal = 0;
+        let lifestyleTotal = 0;
         
         budget.map((elment) =>  {
                 if(elment.category_id == 1) {
@@ -197,21 +203,26 @@ router.get('/dashboard/:id', withAuth, (req, res) => {
                         category[3][3].push(lifestyleAmount)
                     }
                 }
+
+                savingsTotal = (savingsAcc + checkingAcc + investAcc + retireAcc);
+                housingTotal = ( mortgage + utils + repairs + remodel + propertyTax);
+                transportationTotal = (vehiclePay + gas + vehicleRep + publicTrans);
+                lifestyleTotal = (clothing + dining + travel + entertain);
                 return category;
 
-
+                
         });
         // console.log(category);
         // const amount = budget.map(elment => elment.budget_amount);
         // console.log(amount);//amount is an array that i need to pass to handlebars
-        res.render('dashboard', {savingsAcc,checkingAcc,investAcc,retireAcc,mortgage,utils,repairs,remodel,propertyTax, vehiclePay,vehicleRep,gas,publicTrans,entertain,clothing,travel,dining, loggedIn: req.session.loggedIn });
+        res.render('dashboard', {savingsTotal, housingTotal, transportationTotal, lifestyleTotal ,savingsAcc,checkingAcc,investAcc,retireAcc,mortgage,utils,repairs,remodel,propertyTax, vehiclePay,vehicleRep,gas,publicTrans,entertain,clothing,travel,dining, loggedIn: req.session.loggedIn });
         
     })
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
     });
-    }
+    // }
 });
 
 module.exports = router;

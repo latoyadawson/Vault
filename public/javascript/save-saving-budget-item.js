@@ -1,6 +1,6 @@
 async function saveSavingFormHandler(event) {
   event.preventDefault();
-  // console.log("hi")
+
   //-------------------- Saving Budget --------------------//
   const saving_amount = document.querySelector('input[id="savings-budget"]').value;
   const checking_amount = document.querySelector('input[id="checking-budget"]').value;
@@ -31,8 +31,8 @@ async function saveBudgetForm(budget_name, amount, category) {
   });
 
   if (response.ok) {
-    document.location.replace('/dashboard');
-    // document.location.reload();
+    // document.location.replace('/dashboard');
+    document.location.reload();
     return;
   } else {
     console.log(response.statusText);
