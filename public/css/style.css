@@ -4,11 +4,17 @@
 
 :hover::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: rgb(255, 255, 255);
+
 }
 
 :hover::-moz-placeholder { /* Firefox 19+ */
     color: rgb(255, 255, 255);
 }
+
+body {
+    background-color: aliceblue !important;
+}
+
 
 /* input text css */
 
@@ -22,6 +28,7 @@ input[type=text]:hover {
     background-color: #0d6dfd90;
     color: white;
 }
+
 
 /* input email css */
 
@@ -39,6 +46,7 @@ input[type=email]:hover {
 
 /* input password css */
 
+
 input[type=password]:focus {
     background-color: white;
     color:#0d6efd;
@@ -53,10 +61,11 @@ input[type=password]:hover {
 
 #landing-form {
     min-height: 100vh;
-    display: flex;
-    justify-content: center;
+    display: grid;
     align-items: center;
     justify-content: space-evenly;
+    padding-bottom: 80px;
+    padding-block: 200px;
 }
 
 #signup-form {
@@ -238,3 +247,38 @@ input[type=password]:hover {
     background-color: #506c96;
 
 }
+
+/* Logo STARTS here */
+.vaultLogo {
+    margin-top: 30px;
+    margin-left: 35px;
+    position: absolute;
+    width: 100px;
+  }
+
+  .rotate {
+    animation: rotation 8s infinite linear;
+  }
+  
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+
+  /* Logo ENDS here */
+
+/* DARK MODE STYLE */
+
+  .darkmode-toggle--white {
+    background: orange !important;
+}
+
+.darkmode-background {
+    background: aliceblue !important;
+
+}
+

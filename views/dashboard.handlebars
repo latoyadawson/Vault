@@ -1,5 +1,6 @@
 <div>
     <button id="logout" type="button" class="btn btn-outline-primary btn-xl">logout</button>
+
 </div>    
 
     
@@ -16,9 +17,11 @@
         </div>
         <div id="canvas4">
             <p id="canvasp">{{lifestyleTotal}}</p>
+
         </div>
     </div>
-    <div id="dashboard-button-div">
+
+<div id="dashboard-button-div">
         <button type="button" class="btn btn-outline-primary btn-xxl-dashboard savings-modal-btn">
             Savings
         </button>
@@ -38,12 +41,16 @@
             Lifestyle
         </button>
         {{> lifestyle2 }}
-
     </div>
+
 
 </div>
 
-{{!-- <script src="/javascript/bgblur.js"></script> --}}
+
+<!-- place the dashboard button-div here so modal blur can work -->
+
+{{!-- <script src="/javascript/modal-action.js"></script> --}}
+
 <script src="/javascript/lifestyle.js"></script>
 <script src="/javascript/transportationmodal.js"></script>
 <script src="/javascript/housingmodal.js"></script>

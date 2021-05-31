@@ -51,6 +51,7 @@ router.get('/dashboard/:id', withAuth, (req, res) => {
                 model: BudgetItems,
                 attributes: ['id','name', 'budget_amount', 'category_id'],
             },
+
         ]
     })
     .then(dbBudgetData => {
@@ -219,6 +220,7 @@ router.get('/dashboard/:id', withAuth, (req, res) => {
         // console.log(amount);//amount is an array that i need to pass to handlebars
         res.render('dashboard', {savingsTotal, housingTotal, transportationTotal, lifestyleTotal ,savingsAcc,checkingAcc,investAcc,retireAcc,mortgage,utils,repairs,remodel,propertyTax, vehiclePay,vehicleRep,gas,publicTrans,entertain,clothing,travel,dining, loggedIn: req.session.loggedIn });
         
+
     })
     .catch(err => {
         console.log(err);
